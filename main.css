@@ -1,0 +1,182 @@
+:root {
+  --main-color: #2195f3;
+  --secondary-color: #009587;
+  --main-padding: 15px;
+  --secondary-padding: 10px;
+  --main-margin: 15px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: cairo;
+}
+
+.game {
+  background-color: #eee;
+  height: 100vh;
+}
+
+.game .title {
+  background-color: var(--main-color);
+  color: white;
+  padding: var(--main-padding);
+  font-size: 23px;
+  text-align: center;
+}
+
+.game .container {
+  max-width: 900px;
+  margin-inline: auto;
+}
+
+.game .container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.game .container .message {
+  background-color: #fff;
+  text-align: center;
+  padding: var(--secondary-padding);
+}
+
+.game .container .message .choose-level {
+  position: relative;
+}
+
+.game .container .message .choose-level ul {
+  position: absolute;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  box-shadow: 0 0 5px 0px #0000004d;
+  display: none;
+}
+
+.game .container .message .choose-level ul li {
+  padding-inline: 10px;
+  cursor: pointer;
+}
+
+.game .container .message .choose-level ul li:hover {
+  background: var(--main-color);
+  color: white;
+}
+
+.game .container .message>span::before {
+  content: "[ ";
+  color: var(--secondary-color);
+  font-weight: bold;
+}
+
+.game .container .message>span::after {
+  content: " ]";
+  color: var(--secondary-color);
+  font-weight: bold;
+}
+
+.container .message ul {
+  list-style: none;
+  display: flex;
+}
+
+.container .message select {
+  display: none;
+}
+
+.game .container button {
+  display: none;
+}
+
+.game .container .current-word {
+  background-color: #fff;
+  text-align: center;
+  padding: var(--secondary-padding);
+  color: var(--main-color);
+  font-weight: 600;
+  font-size: 30px;
+}
+
+.game .container input {
+  width: 100%;
+  padding: var(--secondary-padding);
+  font-size: 20px;
+  text-align: center;
+  caret: var(--main-color);
+  border: 1px solid var(--main-color)
+}
+
+.game .container input:focus {
+  outline: none;
+}
+
+.game .container .upcoming-words {
+  overflow: clip;
+  background-color: #fff;
+  padding: var(--main-padding);
+}
+
+.game .container .upcoming-words span {
+  background-color: var(--main-color);
+  color: #fff;
+  padding: 5px;
+  font-weight: bold;
+  border-radius: 6px;
+  margin-right: 3px;
+}
+
+.game .container .upcoming-words span:last-child {
+  margin-right: 0;
+}
+
+.game .container .control {
+  background-color: #fff;
+  display: flex;
+  justify-content: space-between;
+  padding: var(--secondary-padding);
+}
+
+.game .container .control span span {
+  color: var(--secondary-color);
+  font-weight: bold;
+}
+
+.game .container .control .word-count {
+  border: none;
+  font-size: 1rem;
+}
+
+.game .container .control .word-count:focus {
+  outline: none;
+}
+
+.game .container .result {
+  display: none;
+  background-color: #fff;
+  padding: var(--main-padding);
+  font-size: 30px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.game .container .result.good {
+  color: var(--secondary-color);
+}
+
+.game .container .result.bad {
+  color: red;
+}
+
+.game .container .restart {
+  background-color: var(--secondary-color);
+  color: #fff;
+  width: fit-content;
+  padding: 5px 15px;
+  margin-left: auto;
+  cursor: pointer;
+  font-size: 18px;
+}
